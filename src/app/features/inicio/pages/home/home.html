@@ -1,4 +1,35 @@
-<section>
-  <h2>Olá, eu sou Sarah</h2>
-  <p>Desenvolvedora front-end com experiência em Angular, React e sistemas corporativos.</p>
-</section>
+<main class="home">
+  <section class="home__container">
+    <section class="hero">
+      <div class="hero__conteudo">
+        <span class="hero__eyebrow">Olá, eu sou</span>
+
+        <h1 class="hero__titulo">{{ titulo }}</h1>
+
+        <p class="hero__cargo">{{ cargo }}</p>
+
+        <p class="hero__descricao">
+          {{ descricao }}
+        </p>
+
+        <div class="hero__acoes">
+          <a class="botao botao--primario" href="#projetos">Ver projetos</a>
+          <a class="botao botao--secundario" href="#">Baixar CV</a>
+        </div>
+      </div>
+
+      <div class="hero__imagem">
+        <div class="hero__imagem-card">
+          <img class="hero__foto" [src]="imagemPerfil.src" [alt]="imagemPerfil.alt" />
+        </div>
+      </div>
+    </section>
+
+    <section class="metricas">
+      <article class="metrica-card" *ngFor="let metrica of metricas">
+        <span class="metrica-card__valor">{{ metrica.valor }}</span>
+        <p class="metrica-card__titulo">{{ metrica.titulo }}</p>
+      </article>
+    </section>
+  </section>
+</main>

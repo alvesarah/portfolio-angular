@@ -1,9 +1,40 @@
-<header>
-  <h1>Sarah Alves</h1>
+<header class="cabecalho">
+  <a class="cabecalho__logo" routerLink="/">SA.</a>
 
-  <nav>
-    <a routerLink="/">Início</a>
+  <nav class="cabecalho__menu">
     <a routerLink="/">Projetos</a>
+    <a routerLink="/">Sobre</a>
+    <a routerLink="/">Experiência</a>
     <a routerLink="/">Contato</a>
   </nav>
+
+  <button
+    type="button"
+    class="cabecalho__botao-tema"
+    (click)="alternarTema()"
+    [attr.aria-label]="temaEscuroAtivo ? 'Ativar tema claro' : 'Ativar tema escuro'"
+    [attr.aria-pressed]="temaEscuroAtivo"
+  >
+    <svg *ngIf="!temaEscuroAtivo" class="cabecalho__icone" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.657 5.657 1.414 1.414M4.929 4.929l1.414 1.414m0 11.314-1.414 1.414m12.728-12.728 1.414-1.414M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+
+    <svg *ngIf="temaEscuroAtivo" class="cabecalho__icone" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
 </header>

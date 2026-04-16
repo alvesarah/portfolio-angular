@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --fonte-titulo: 'Cormorant Garamond', serif;
+  --fonte-texto: 'Inter', sans-serif;
+
+  /* tema claro */
+  --cor-fundo: #ece9e5;
+  --cor-superficie: #f6f3f0;
+  --cor-card: #f1eeea;
+  --cor-borda: #d8d2cc;
+
+  --cor-texto: #1e2130;
+  --cor-texto-suave: #5c6070;
+
+  --cor-primaria: #edb7b3;
+  --cor-primaria-hover: #e3a6a0;
+
+  --cor-secundaria: #c6c2cd;
+  --cor-destaque: #c1b580;
+
+  --cor-sucesso: #8fae9d;
+  --cor-icone: #6a6e7a;
+}
+
+[data-tema='escuro'] {
+  --cor-fundo: #1e2130;
+  --cor-superficie: #25293b;
+  --cor-card: #2c3147;
+  --cor-borda: #3a405a;
+
+  --cor-texto: #f5f1ec;
+  --cor-texto-suave: #cfc8c2;
+
+  --cor-primaria: #edb7b3;
+  --cor-primaria-hover: #f2c5c1;
+
+  --cor-secundaria: #c6c2cd;
+  --cor-destaque: #c1b580;
+
+  --cor-sucesso: #9bb8a7;
+  --cor-icone: #ddd6cf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  line-height: 1;
+}
+
+p,
+a,
+button,
+input,
+textarea,
+span,
+li {
+  font-family: var(--fonte-texto);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
