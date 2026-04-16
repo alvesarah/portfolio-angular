@@ -46,18 +46,27 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   min-height: 100%;
 }
 
 body {
+  margin: 0;
   font-family: var(--fonte-texto);
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+section {
+  scroll-margin-top: 110px;
 }
 
 h1,

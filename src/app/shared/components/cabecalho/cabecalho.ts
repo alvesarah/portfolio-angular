@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-cabecalho',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './cabecalho.html',
   styleUrl: './cabecalho.scss',
 })
 export class Cabecalho implements OnInit {
   temaAtual: 'claro' | 'escuro' = 'claro';
+  menuAberto = false;
 
   ngOnInit(): void {
     const temaSalvo = localStorage.getItem('tema');
@@ -23,6 +26,14 @@ export class Cabecalho implements OnInit {
   alternarTema(): void {
     this.temaAtual = this.temaAtual === 'claro' ? 'escuro' : 'claro';
     this.aplicarTema();
+  }
+
+  alternarMenu(): void {
+    this.menuAberto = !this.menuAberto;
+  }
+
+  fecharMenu(): void {
+    this.menuAberto = false;
   }
 
   private aplicarTema(): void {

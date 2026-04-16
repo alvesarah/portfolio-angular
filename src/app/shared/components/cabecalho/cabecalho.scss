@@ -1,11 +1,15 @@
 .cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   max-width: 1280px;
   margin: 0 auto;
   padding: 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--cor-fundo) 82%, transparent);
 }
 
 .cabecalho__logo {
@@ -13,9 +17,12 @@
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--cor-texto);
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .cabecalho__menu {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -26,6 +33,7 @@
   font-weight: 600;
   text-transform: uppercase;
   color: var(--cor-texto-suave);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -33,7 +41,15 @@
   color: var(--cor-texto);
 }
 
-.cabecalho__botao-tema {
+.cabecalho__acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cabecalho__botao-tema,
+.cabecalho__botao-menu {
   width: 48px;
   height: 48px;
   border: 1px solid var(--cor-borda);
@@ -51,11 +67,11 @@
     transform 0.2s ease;
 }
 
-.cabecalho__botao-tema:hover {
+.cabecalho__botao-tema:hover,
+.cabecalho__botao-menu:hover {
   transform: translateY(-1px);
   border-color: var(--cor-primaria);
   background-color: var(--cor-card);
-  color: var(--cor-texto);
 }
 
 .cabecalho__icone {
@@ -63,15 +79,53 @@
   height: 20px;
 }
 
+.cabecalho__botao-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cabecalho__botao-menu span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: currentColor;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .cabecalho {
     flex-wrap: wrap;
     padding: 18px;
+    gap: 16px;
+  }
+
+  .cabecalho__logo {
+    order: 1;
+  }
+
+  .cabecalho__acoes {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .cabecalho__botao-menu {
+    display: flex;
   }
 
   .cabecalho__menu {
+    order: 3;
+    margin-left: 0;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 14px 18px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cor-borda);
+  }
+
+  .cabecalho__menu--aberto {
+    display: flex;
   }
 }
