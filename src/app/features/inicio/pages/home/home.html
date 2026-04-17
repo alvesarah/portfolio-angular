@@ -14,7 +14,7 @@
 
         <div class="hero__acoes">
           <a class="botao botao--primario" href="#projetos">Ver projetos</a>
-          <a class="botao botao--secundario" href="#">Baixar CV</a>
+          <a class="botao botao--secundario hero__botao-cv" href="#">Baixar CV</a>
         </div>
       </div>
 
@@ -32,19 +32,70 @@
       </article>
     </section>
   </section>
+
   <section id="projetos" class="secao">
-    <!-- projetos -->
+    <div class="secao__container">
+      <div class="secao__cabecalho">
+        <span class="secao__eyebrow">Portfólio</span>
+        <h2 class="secao__titulo">Projetos em destaque</h2>
+        <p class="secao__descricao">
+          Alguns projetos que representam minha evolução com interfaces modernas, responsividade,
+          organização de componentes e experiência do usuário.
+        </p>
+      </div>
+
+      <div class="projetos__grid">
+        <article class="projeto-card" *ngFor="let projeto of projetos">
+          <div class="projeto-card__imagem">
+            <img
+              class="projeto-card__foto"
+              [src]="projeto.imagem.src"
+              [alt]="projeto.imagem.alt"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="projeto-card__topo">
+            <span class="projeto-card__tipo">{{ projeto.tipo }}</span>
+          </div>
+
+          <h3 class="projeto-card__titulo">{{ projeto.nome }}</h3>
+
+          <p class="projeto-card__descricao">
+            {{ projeto.descricao }}
+          </p>
+
+          <div class="projeto-card__tecnologias">
+            <span class="tag" *ngFor="let tecnologia of projeto.tecnologias">
+              {{ tecnologia }}
+            </span>
+          </div>
+
+          <div class="projeto-card__acoes">
+            <span class="botao botao--primario botao--desabilitado"> Em breve </span>
+
+            <span class="botao botao--secundario botao--desabilitado"> Em breve </span>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <section id="sobre" class="secao">
-    <!-- sobre -->
+    <div class="secao__container">
+      <!-- sobre -->
+    </div>
   </section>
 
   <section id="experiencia" class="secao">
-    <!-- experiência -->
+    <div class="secao__container">
+      <!-- experiência -->
+    </div>
   </section>
 
   <section id="contato" class="secao">
-    <!-- contato -->
+    <div class="secao__container">
+      <!-- contato -->
+    </div>
   </section>
 </main>
