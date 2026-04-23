@@ -1,0 +1,93 @@
+<main class="sobre-pagina">
+  <section class="sobre-pagina__hero">
+    <div class="sobre-pagina__hero-conteudo">
+      <span class="sobre-pagina__eyebrow">Sobre mim</span>
+      <h1 class="sobre-pagina__titulo">Mais detalhes sobre minha jornada</h1>
+      <p class="sobre-pagina__descricao">
+        Aqui ficam minhas experiências, tecnologias e alguns pontos que resumem meu jeito de
+        construir interfaces e evoluir como desenvolvedora.
+      </p>
+
+      <div class="sobre-pagina__acoes">
+        <a class="botao botao--secundario" routerLink="/">Voltar para home</a>
+        <a class="botao botao--primario" href="/#projetos">Ver projetos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-pagina__secao">
+    <div class="sobre-pagina__cabecalho">
+      <span class="sobre-pagina__secao-eyebrow">Apresentação</span>
+      <h2 class="sobre-pagina__secao-titulo">Quem eu sou hoje</h2>
+    </div>
+
+    <div class="sobre-pagina__texto-card">
+      <p *ngFor="let paragrafo of apresentacao">
+        {{ paragrafo }}
+      </p>
+    </div>
+  </section>
+
+  <section class="sobre-pagina__secao">
+    <div class="sobre-pagina__cabecalho">
+      <span class="sobre-pagina__secao-eyebrow">Destaques</span>
+      <h2 class="sobre-pagina__secao-titulo">Pontos que me representam</h2>
+    </div>
+
+    <div class="sobre-pagina__destaques">
+      <article class="destaque-card" *ngFor="let destaque of destaquesSobre">
+        <h3 class="destaque-card__titulo">{{ destaque.titulo }}</h3>
+        <p class="destaque-card__descricao">{{ destaque.descricao }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sobre-pagina__secao">
+    <div class="sobre-pagina__cabecalho">
+      <span class="sobre-pagina__secao-eyebrow">Tecnologias</span>
+      <h2 class="sobre-pagina__secao-titulo">Ferramentas e focos de estudo</h2>
+    </div>
+
+    <div class="grupos-tecnologia">
+      <article class="grupo-tecnologia" *ngFor="let grupo of gruposTecnologia">
+        <h3 class="grupo-tecnologia__titulo">{{ grupo.titulo }}</h3>
+
+        <div class="grupo-tecnologia__tags">
+          <span class="tag" *ngFor="let item of grupo.itens">
+            {{ item }}
+          </span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sobre-pagina__secao">
+    <div class="sobre-pagina__cabecalho">
+      <span class="sobre-pagina__secao-eyebrow">Experiência</span>
+      <h2 class="sobre-pagina__secao-titulo">Minha trajetória até aqui</h2>
+    </div>
+
+    <div class="experiencias">
+      <article class="experiencia-card" *ngFor="let experiencia of experiencias">
+        <div class="experiencia-card__topo">
+          <div>
+            <p class="experiencia-card__empresa">{{ experiencia.empresa }}</p>
+            <h3 class="experiencia-card__cargo">{{ experiencia.cargo }}</h3>
+          </div>
+
+          <span class="experiencia-card__contexto">{{ experiencia.contexto }}</span>
+        </div>
+
+        <p class="experiencia-card__descricao">
+          {{ experiencia.descricao }}
+        </p>
+
+        <div class="experiencia-card__tecnologias">
+          <span class="tag" *ngFor="let tecnologia of experiencia.tecnologias">
+            {{ tecnologia }}
+          </span>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>

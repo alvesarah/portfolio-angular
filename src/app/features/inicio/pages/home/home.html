@@ -73,7 +73,6 @@
 
           <div class="projeto-card__acoes">
             <span class="botao botao--primario botao--desabilitado"> Em breve </span>
-
             <span class="botao botao--secundario botao--desabilitado"> Em breve </span>
           </div>
         </article>
@@ -81,78 +80,54 @@
     </div>
   </section>
 
-  <section id="sobre" class="secao">
+  <section id="sobre" class="secao secao--faixa-sobre">
     <div class="secao__container">
-      <div class="secao__cabecalho">
-        <span class="secao__eyebrow">Sobre mim</span>
-        <h2 class="secao__titulo">Mais do que código, gosto de construir boas experiências</h2>
-        <p class="secao__descricao">
-          Minha trajetória é focada em desenvolvimento front-end, interfaces bem estruturadas e
-          evolução contínua como desenvolvedora.
-        </p>
-      </div>
+      <div class="sobre-resumo">
+        <div class="sobre-resumo__coluna sobre-resumo__coluna--texto">
+          <span class="sobre-resumo__eyebrow">Sobre mim</span>
 
-      <div class="sobre">
-        <div class="sobre__conteudo">
-          <div class="sobre__texto">
-            <p *ngFor="let paragrafo of sobreParagrafos">
+          <h2 class="sobre-resumo__titulo">
+            Mais do que código, gosto de construir boas experiências
+          </h2>
+
+          <div class="sobre-resumo__texto">
+            <p *ngFor="let paragrafo of resumoSobre">
               {{ paragrafo }}
             </p>
           </div>
 
-          <div class="sobre__tecnologias">
-            <span class="sobre__tecnologias-titulo">Tecnologias e ferramentas</span>
-
-            <div class="sobre__tags">
-              <span class="tag" *ngFor="let tecnologia of tecnologiasPrincipais">
-                {{ tecnologia }}
-              </span>
-            </div>
-          </div>
+          <a class="botao botao--primario sobre-resumo__botao" routerLink="/sobre">
+            Conhecer mais
+          </a>
         </div>
 
-        <div class="sobre__cards">
-          <article class="sobre__card" *ngFor="let destaque of destaquesSobre">
-            <h3 class="sobre__card-titulo">{{ destaque.titulo }}</h3>
-            <p class="sobre__card-descricao">{{ destaque.descricao }}</p>
-          </article>
+        <div class="sobre-resumo__coluna sobre-resumo__coluna--lista">
+          <span class="sobre-resumo__lista-titulo">Principais tecnologias</span>
+
+          <ul class="sobre-resumo__lista">
+            <li class="sobre-resumo__item" *ngFor="let tecnologia of tecnologiasResumo">
+              <span class="sobre-resumo__item-icone"></span>
+              <span>{{ tecnologia }}</span>
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="experiencia" class="secao">
-    <div class="secao__container">
-      <div class="secao__cabecalho">
-        <span class="secao__eyebrow">Experiência</span>
-        <h2 class="secao__titulo">Minha trajetória até aqui</h2>
-        <p class="secao__descricao">
-          Experiências que ajudaram a construir minha base técnica e meu olhar para produto,
-          manutenção e evolução de interfaces.
-        </p>
-      </div>
+        <div class="sobre-resumo__coluna sobre-resumo__coluna--visual" aria-hidden="true">
+          <div class="sobre-resumo__visual">
+            <div class="sobre-resumo__mancha sobre-resumo__mancha--bege"></div>
+            <div class="sobre-resumo__mancha sobre-resumo__mancha--rosa"></div>
+            <div class="sobre-resumo__base"></div>
 
-      <div class="experiencias">
-        <article class="experiencia-card" *ngFor="let experiencia of experiencias">
-          <div class="experiencia-card__topo">
-            <div>
-              <p class="experiencia-card__empresa">{{ experiencia.empresa }}</p>
-              <h3 class="experiencia-card__cargo">{{ experiencia.cargo }}</h3>
-            </div>
+            <span class="sobre-resumo__ramo sobre-resumo__ramo--1"></span>
+            <span class="sobre-resumo__ramo sobre-resumo__ramo--2"></span>
+            <span class="sobre-resumo__ramo sobre-resumo__ramo--3"></span>
+            <span class="sobre-resumo__ramo sobre-resumo__ramo--4"></span>
+            <span class="sobre-resumo__ramo sobre-resumo__ramo--5"></span>
 
-            <span class="experiencia-card__contexto">{{ experiencia.contexto }}</span>
+            <div class="sobre-resumo__vaso"></div>
+            <div class="sobre-resumo__vaso-menor"></div>
           </div>
-
-          <p class="experiencia-card__descricao">
-            {{ experiencia.descricao }}
-          </p>
-
-          <div class="experiencia-card__tecnologias">
-            <span class="tag" *ngFor="let tecnologia of experiencia.tecnologias">
-              {{ tecnologia }}
-            </span>
-          </div>
-        </article>
+        </div>
       </div>
     </div>
   </section>
